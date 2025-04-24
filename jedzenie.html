@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" contenct="with=device-width, initial-scale=1.0">
+  <title>Sklep</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h1>Czy kupić Ci coś na lepsze wrażenia?</h1>
+    <div class="jedzenie">
+   
+        <button onclick="chooseFood('Piwko')">Piwko</button>
+        <button onclick="chooseFood('Nie')">Nieee</button>
+      </div>
+    </div>
+    <script>
+        
+      
+        function chooseFood(jedzenie) {
+          localStorage.setItem("randkaJedzenie", jedzenie);
+      
+          if (jedzenie === "Przejażdzka z Cypisem") {
+         
+            const audio = new Audio("muzyka.mp3"); 
+            audio.play();
+      
+            setTimeout(() => {
+              window.location.href = "koniec.html";
+            }, 9000); 
+          } else {
+            window.location.href = "koniec.html";
+          }
+        }
+      </script>
+      
+    
+      
+  
+</body>
+</html>

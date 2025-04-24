@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" contenct="with=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Rande wu</title>
+    </head>
+    <body>
+        <div class="card">
+            <h1>Witam piękna 😏</h1>
+            <img src="bun_36.png" alt="Serce" class="bunny-img">
+            <p>Pójdziesz ze mną na randkę? 💖</p>
+            <div class="buttons">
+                <a href="kalendarz.html"><button class="yes">Tak!</button></a>
+                <button class="no" id="no">Nie</button>
+                
+                      
+                <p id="funnyMessage" style="display: none; margin-top: 20px; font-size: 20px; color: #555;">
+                Ale z Ciebie zły człowiek! 😈
+                </p>
+                <div id="eggplantContainer"></div>
+  
+              
+        </div>
+        <script>
+            const noBtn = document.getElementById("no");
+            const funnyMsg = document.getElementById("funnyMessage");
+            const eggplantContainer = document.getElementById("eggplantContainer");
+            let scale = 1;
+          
+            noBtn.addEventListener("mouseover", () => {
+              scale -= 0.1;
+              if (scale <= 0.1) {
+                noBtn.style.display = "none";
+                funnyMsg.style.display = "block";
+          
+                // 🍆 Start animacji bakłażanów
+                for (let i = 0; i < 20; i++) {
+                  const eggplant = document.createElement("div");
+                  eggplant.textContent = "🍆";
+                  eggplant.className = "eggplant";
+                  eggplant.style.left = Math.random() * 100 + "vw";
+                  eggplant.style.animationDelay = (Math.random() * 2) + "s";
+                  eggplantContainer.appendChild(eggplant);
+          
+                  // Usuń po 5s
+                  setTimeout(() => eggplant.remove(), 5000);
+                }
+          
+              } else {
+                noBtn.style.transform = `scale(${scale})`;
+              }
+            });
+          </script>
+          
+          <div></div>
+
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" contenct="with=device-width, initial-scale=1.0">
+  <title>Miejsce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h1>Co chciałabyś robić???</h1>
+    <div class="places">
+        <button onclick="choosePlace('Przejażdzka z Cypisem')">Podróżować i posłuchać Cypisa</button>
+        <button onclick="choosePlace('Maczek')">Jechać do maczka</button>
+        <button onclick="choosePlace('Mój pokój')">Coś u mnie 😏</button>
+        <button onclick="choosePlace('Twoja propozcyja')">Twoja propozycja</button>
+      </div>
+    </div>
+    <script>
+        const chosenDate = localStorage.getItem("randkaData");
+        document.getElementById("chosenDate").textContent = `Wybrana data: ${chosenDate}`;
+      
+        function choosePlace(place) {
+          localStorage.setItem("randkaMiejsce", place);
+      
+          if (place === "Przejażdzka z Cypisem") {
+         
+            const audio = new Audio("muzyka.mp3"); 
+            audio.play();
+      
+            setTimeout(() => {
+              window.location.href = "jedzenie.html";
+            }, 9000); 
+          } else {
+            window.location.href = "jedzenie.html";
+          }
+        }
+      </script>
+      
+  
+</body>
+</html>
